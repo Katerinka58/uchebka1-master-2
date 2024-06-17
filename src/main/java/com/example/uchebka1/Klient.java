@@ -18,40 +18,22 @@ import java.time.LocalDate;
 
 public class Klient {
 
-    @FXML
-    private MenuButton services;
-
-    @FXML
-    private MenuItem marriage;
-
-    @FXML
-    private MenuItem festival;
-
-    @FXML
-    private MenuItem forum;
-
-    @FXML
-    private Button sendrRquest;
-
-    @FXML
-    private DatePicker date_of_event;
-
-    @FXML
-    private TextField name_of_event;
-
-    @FXML
-    private TextField count_people;
-
-    @FXML
-    private Button back;
-
+    @FXML private Button back;
+    @FXML private MenuItem conference;
+    @FXML private Button contacts;
+    @FXML private MenuItem del_mer;
+    @FXML private MenuItem festival;
+    @FXML private MenuItem korporetion;
+    @FXML private MenuItem marriage;
+    @FXML private MenuItem online_mer;
+    @FXML private Button portfolio;
+    @FXML private Button prices;
+    @FXML private MenuButton services;
     @FXML
     public void initialize() {
         marriage.setOnAction(even -> services.setText(marriage.getText()));
         festival.setOnAction(even -> services.setText(festival.getText()));
-        forum.setOnAction(even -> services.setText(forum.getText()));
-        date_of_event.setValue(LocalDate.now().plusDays(1));
-        sendrRquest.setOnAction(even -> registerEvent());
+
     }
     private void showAlert(Alert.AlertType alertType, String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -60,35 +42,7 @@ public class Klient {
         alert.setContentText(content);
         alert.showAndWait();
     }
-    public void registerEvent() {
 
-        LocalDate selectedDate = date_of_event.getValue();
-        LocalDate today = LocalDate.now();
-
-        if (!selectedDate.isAfter(today)) {
-            showAlert(Alert.AlertType.ERROR, "Ошибка", "Дата должна быть "+ today +" .");
-            return;
-        }
-
-        String countText = count_people.getText();
-        try {
-            int count = Integer.parseInt(countText);
-            if (count < 0 || count > 100000) {
-                throw new IllegalArgumentException("Количество людей должно быть от 0 до 100000.");
-            } else if (services.getText().equals("Услуги")) {
-                throw new IllegalArgumentException("Пожалуйста, выберите услугу.");
-            } else if (name_of_event.getText().isEmpty()) {
-                showAlert(Alert.AlertType.ERROR, "Ошибка", "Название не может быть пустым.");
-            } else {
-                DataHelper dbhelper = new DataHelper();
-                dbhelper.registerEvent(services.getText(), selectedDate.toString(), name_of_event.getText(), countText, Avtorizachia.user);
-            }
-        } catch (NumberFormatException e) {
-            showAlert(Alert.AlertType.ERROR, "Ошибка", "Неверное значение для количества людей. Введите число от 0 до 100000.");
-        } catch (IllegalArgumentException e) {
-            showAlert(Alert.AlertType.ERROR, "Ошибка", e.getMessage());
-        }
-    }
     public void back(MouseEvent mouseEvent) {
         back.getScene().getWindow().hide();
 
@@ -104,4 +58,17 @@ public class Klient {
         stage.setScene(new Scene(root));
         stage.show();
     }
+     public void setContacts(){
+        contacts.getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader();
+         loader.setLocation(getClass().getResource("Avtiriz.xml.fxml"));
+         try {
+             loader.load();
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+         Parent root = loader.getRoot();
+         Stage stage = new Stage();
+         stage.setScene(new Scene(root));
+         stage.show();     }
 }
