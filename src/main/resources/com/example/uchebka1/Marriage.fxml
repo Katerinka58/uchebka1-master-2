@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="684.0" style="-fx-background-color: #8d5f47;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uchebka1.Contacts">
+    <children>
+        <ImageView fitHeight="502.0" fitWidth="345.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../../../../🕯️🕯️.jpeg" />
+            </image>
+        </ImageView>
+        <Button fx:id="back" ellipsisString="↩" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#setBack" prefHeight="3.0" prefWidth="31.0" style="-fx-background-color: #7c5643;" text="&lt;" textAlignment="CENTER" textOverrun="CLIP">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Button>
+      <Label layoutX="471.0" layoutY="51.0" text="Свадьба " textFill="WHITE">
+         <font>
+            <Font name="Noto Sans Kannada ExtraLight" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="place" layoutX="355.0" layoutY="212.0" style="-fx-background-color: #c2a78c;" />
+      <TextField fx:id="quantity_guests" layoutX="355.0" layoutY="140.0" style="-fx-background-color: #c2a78c;" />
+      <Label layoutX="355.0" layoutY="104.0" text="Количество гостей:" textFill="WHITE">
+         <font>
+            <Font name="Noto Sans Kannada ExtraLight" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="355.0" layoutY="179.0" text="Место:" textFill="WHITE">
+         <font>
+            <Font name="Noto Sans Kannada ExtraLight" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="361.0" layoutY="258.0" text="Концепция" textFill="WHITE">
+         <font>
+            <Font name="Noto Sans Kannada ExtraLight" size="13.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="concept" layoutX="355.0" layoutY="299.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: #c2a78c;" text="Концепция">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+         <font>
+            <Font name="Noto Sans Kannada ExtraLight" size="12.0" />
+         </font>
+      </MenuButton>
+      <DatePicker fx:id="data" layoutX="355.0" layoutY="371.0" style="-fx-background-color: #7c5643;" />
+      <Label layoutX="364.0" layoutY="337.0" text="Дата:" textFill="WHITE">
+         <font>
+            <Font name="Noto Sans Kannada ExtraLight" size="13.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

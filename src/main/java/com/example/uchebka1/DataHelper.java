@@ -54,6 +54,23 @@ public class DataHelper extends Confics {
         return resSet;
     }
 
+    public ResultSet getUserF(User user) {
+        ResultSet resSet = null;
+
+        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " +
+                Const.USERS_USERNAME + "=? AND " + Const.USERS_PHONE + "=?";
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            prSt.setString(1, user.getLogin());
+            prSt.setString(2, user.getPhone());
+            System.out.println(user.getPhone());
+            resSet = prSt.executeQuery();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return resSet;
+    }
+
     public void deleteUser(String userId) throws SQLException, ClassNotFoundException {
         String delete = "DELETE FROM " + Const.USER_TABLE + " WHERE " + Const.USERS_ID + "=?";
         try (PreparedStatement prSt = getDbConnection().prepareStatement(delete)) {

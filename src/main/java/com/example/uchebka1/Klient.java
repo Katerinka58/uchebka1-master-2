@@ -33,6 +33,9 @@ public class Klient {
     public void initialize() {
         marriage.setOnAction(even -> services.setText(marriage.getText()));
         festival.setOnAction(even -> services.setText(festival.getText()));
+        conference.setOnAction(even -> services.setText(conference.getText()));
+        korporetion.setOnAction(even -> services.setOnAction(korporetion.getOnAction()));
+        online_mer.setOnAction(even -> services.setOnAction(online_mer.getOnAction()));
 
     }
     private void showAlert(Alert.AlertType alertType, String title, String content) {
@@ -61,7 +64,7 @@ public class Klient {
      public void setContacts(){
         contacts.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader();
-         loader.setLocation(getClass().getResource("Avtiriz.xml.fxml"));
+         loader.setLocation(getClass().getResource("Contacts.fxml"));
          try {
              loader.load();
          } catch (IOException e) {
@@ -71,4 +74,5 @@ public class Klient {
          Stage stage = new Stage();
          stage.setScene(new Scene(root));
          stage.show();     }
+
 }

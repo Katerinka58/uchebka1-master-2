@@ -42,7 +42,8 @@ public class Registr {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Message");
                 alert.setHeaderText(null);
-                alert.setContentText("Вы зарегистрированы!Вернитесь на главную форму и авторизуйтесь!");
+                alert.setContentText("Вы зарегистрированы!" +
+                        "Вернитесь на главную форму и авторизуйтесь!");
                 alert.showAndWait();
             }
 

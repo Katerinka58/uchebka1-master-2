@@ -18,25 +18,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Avtorizachia {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Button enter_button;
-
-    @FXML
-    private TextField login_text;
-
-    @FXML
-    private TextField pasword_text;
+    @FXML private ResourceBundle resources;
+    @FXML private URL location;
+    @FXML private Button enter_button;
+    @FXML private TextField login_text;
+    @FXML private TextField pasword_text;
     static User user = new User();
-
-    @FXML
-    private Button regictr_button;
+    @FXML private Button regictr_button;
+    @FXML private Button forgot_password;
+    @FXML private Button guest_entrance;
     @FXML
     void initialize() {
         // кнопка с методом удаляющий пустые места
@@ -96,6 +86,7 @@ public class Avtorizachia {
         }
     }
 
+    @FXML
     private void openRoleBasedWindow() {
         String fxmlFile = "";
         switch (user.getRol()) {
@@ -149,6 +140,33 @@ public class Avtorizachia {
             return null;
         }
     }
+    public void setGuest_entrance(){
+        guest_entrance.getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Klient.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();     }
+    public void setForgot_password (){
+        guest_entrance.getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Password_recovery.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();     }
+
 }
 
 
