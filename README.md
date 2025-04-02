@@ -15,15 +15,15 @@
 
 - [Java](https://www.java.com/ru/)
 
-- JavaFx
+- [JavaFx](https://metanit.com/java/javafx/1.1.php)
 
-- SceneBilder
+- [SceneBilder](https://habr.com/ru/companies/first/articles/676290/)
 
-- MySqlWorkbench
+- [MySqlWorkbench](https://www.mysql.com/products/workbench/)
   
-- SpringBoot
+- [SpringBoot](https://spring.io/projects/spring-boot)
 
-- springAI
+- [SpringAI](https://spring.io/projects/spring-ai)
 
 ##  Разработчик
 Екатерина
