@@ -1,6 +1,7 @@
 ##  Десктопное приложение "Автоматизация процессов на малых и средних организациях"
-![image](![Uploading image.png…]()
-)
+![image](https://github.com/user-attachments/assets/8eb495b3-af74-44cf-b313-7719988c69bc)
+
+
 
 
 ### Цели
