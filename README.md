@@ -13,7 +13,7 @@
 
 ##  Использованные источники
 
-- [Java] (https://www.java.com/ru/)
+- [Java](https://www.java.com/ru/)
 
 - JavaFx
 
